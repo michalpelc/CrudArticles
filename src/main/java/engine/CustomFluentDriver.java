@@ -19,8 +19,6 @@ public class CustomFluentDriver extends FluentTest {
     @Override
     public WebDriver newWebDriver() {
         ChromeOptions chromeOptions = new ChromeOptions();
-//        chromeOptions.addArguments("--no-sandbox");
-//        chromeOptions.addArguments("--headless");
         return getProperty("isRemote").equals("true") ? remoteWebDriver() : new ChromeDriver(chromeOptions);
     }
 
