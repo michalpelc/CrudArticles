@@ -12,3 +12,9 @@
 `mvn clean -U test -DisRemote=true <- run test on selenium hub after adding arguments with server and port.`
 `eg. mvn test -DisRemote=true -DhubUrl=localhost -DhubPort=4444`
 
+### How to generate test report:
+
+`mvn allure-serve`
+
+
+
