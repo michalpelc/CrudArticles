@@ -1,14 +1,12 @@
 package page;
 
 import org.fluentlenium.core.FluentPage;
-import org.fluentlenium.core.annotation.Page;
 import org.fluentlenium.core.domain.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SignInPage extends FluentPage {
+import static java.util.concurrent.TimeUnit.SECONDS;
 
-    @Page
-    LoggedInPage loggedInPage;
+public class SignInPage extends FluentPage {
 
     @FindBy(xpath = "//input[@placeholder='Username']")
     private FluentWebElement username;
@@ -19,12 +17,12 @@ public class SignInPage extends FluentPage {
     @FindBy(xpath = "//button[@type='submit']")
     private FluentWebElement signInButton;
 
-    public LoggedInPage login(String user, String pass) {
+    public void login(String user, String pass) {
         await().until(username).displayed();
-        password.fill().withText(pass);
         username.fill().withText(user.toLowerCase());
+        password.fill().withText(pass);
+        await().explicitlyFor(1, SECONDS).until(signInButton).clickable();
         signInButton.click();
-        return loggedInPage;
     }
 
 }

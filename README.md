@@ -7,14 +7,16 @@
 
 ### How to run:
 
-`mvn clean -U test -DisRemote=false <- run test locally (already setup to run in parallel per classes).`
+`mvn clean -U compile <- clean and install dependencies with update`
+
+`mvn clean -U test -DisRemote=false <- run test locally.`
 
 `mvn clean -U test -DisRemote=true <- run test on selenium hub after adding arguments with server and port.`
+
 `eg. mvn test -DisRemote=true -DhubUrl=localhost -DhubPort=4444`
 
 ### How to generate test report:
-
-`mvn allure-serve`
+`mvn allure:serve`
 
 
 

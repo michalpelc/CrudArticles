@@ -7,7 +7,7 @@ import org.fluentlenium.core.domain.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
 
 @PageUrl("https://candidatex:qa-is-cool@qa-task.backbasecloud.com/")
-public class MainPage extends FluentPage {
+public class LandingPage extends FluentPage {
 
     @Page
     SignInPage signInPage;
@@ -20,4 +20,5 @@ public class MainPage extends FluentPage {
         signInButton.click();
         return signInPage;
     }
+
 }
